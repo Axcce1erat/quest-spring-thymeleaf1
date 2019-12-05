@@ -1,16 +1,22 @@
+<!--
+You will have noticed that when you submit the form, the page does not yet display the name and number of the doctor you entered. Modify the code of the doctor.html page and the associated controller to retrieve this information and correctly display it.
+-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Doctor Secret Room</title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>Header TODO</header>
+<header th:replace="header.html :: top">
+</header>
 <section>
-    <h1>Welcome $doctorname</h1>
-    <h3>Your number is $doctornumber</h3>
+    <h1 th:text="|Welcome ${doctorName}!|">Welcome $doctorName</h1>
+    <h3 th:text="|Your number is ${doctorNumber}|">Your number is $doctorNumber</h3>
 </section>
-<footer>Footer TODO</footer>
+<footer th:replace="footer.html :: bottom">
+</footer>
 </body>
 </html>
